@@ -7,8 +7,11 @@ class Menu(models.Model):
     Price = models.DecimalField(max_digits=10, decimal_places=2)
     Inventory = models.IntegerField(max_length=5)
 
-    def __str__(self):
-        return self.Title
+    # def __str__(self):
+    #     return self.Title
+
+    def get_item(self):
+        return f'{self.Title} : {self.Price}'
 
 
 class Booking(models.Model):
