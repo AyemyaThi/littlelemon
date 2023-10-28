@@ -22,11 +22,11 @@ from rest_framework import routers
 from restaurant import views
 router = routers.DefaultRouter(trailing_slash=False)
 router.register(r'users', views.UserViewSet)
-router.register(r'tables', views.BookingViewSet)
+router.register(r'booking', views.BookingViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('restaurant/booking/', include(router.urls)),
+    path('api/', include(router.urls)),
     path('api/', include('restaurant.urls')),
     path('auth/', include('djoser.urls')),
     path('auth/', include('djoser.urls.authtoken'))
